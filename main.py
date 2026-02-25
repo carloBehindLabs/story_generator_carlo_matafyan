@@ -14,10 +14,26 @@ def first_template() :
     verb = input("Type Verb: ")
     number2 = input("Type Number 2: ")
     noun2 = input("Type Noun 2: ")
-    
-    print("")
+    noun3 = input("Type Noun 3: ")
+    body2 = input("Type Part of the Body 2: ")
+    # verb
+    noun4 = input("Type Noun 4: ")
+    adjective3 = input("Type Adjective 3: ")
+    sillyWord = input("Type Silly Word: ")
+    # noun
+
+    print("It was about " + number + " " + date + " ago when I arrived at the hospital in a " + transport + ".")
+    print(" The hospital is a/an " + adjective + " place, there are a lot of " + adjective2 + " " + noun + " here.")
+    print(" There are nurses here who have " + color + " " + body + ".")
+    print(" If someone wants to come into my room I told them that they have to " + verb + " first.")
+    print(" I’ve decorated my room with " + number2 + " " + noun2 + ".")
+    print(" Today I talked to a doctor and they were wearing a " + noun3 + " on their " + body2 + ".")
+    print(" I heard that all doctors " + verb + " " + noun4 + " every day for breakfast.")
+    print(" The most " + adjective3 + " thing about being in the hospital is the " + sillyWord + " " + noun + "! ")
+
 def second_template() :
     print("")
+
 def third_template() :
     print("")
 
