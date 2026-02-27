@@ -1,3 +1,5 @@
+import random
+
 def first_template() :
     number = input("Type Number: ")
     date = input("Type a Measure of Time: ")
@@ -80,7 +82,10 @@ def third_template() :
     print(" I hope one day you can visit, although the only way to get here now is " + verbing + " on a " + adjective5 + " " + noun5 + "!!")
 
 
-template = int(input("Which Template you going to pick (1, 2, 3): "))
+template = int(input("Which Template you going to pick (1, 2, 3, 4(for random)): "))
+
+if template == 4 :
+    template = random.randint(1, 3)
 
 match template:
     case 1:
