@@ -1,5 +1,5 @@
 def first_template() :
-    number = int(input("Type Number: "))
+    number = input("Type Number: ")
     date = input("Type a Measure of Time: ")
     transport = input("Type Mode of Transport: ")
     adjective = input("Type Adjective: ")
@@ -26,7 +26,7 @@ def first_template() :
     print(" The most " + adjective3 + " thing about being in the hospital is the " + sillyWord + " " + noun + "! ")
 
 def second_template() :
-    properNoun = int(input("Type Proper Noun (Person’s Name): "))
+    properNoun = input("Type Proper Noun (Person’s Name): ")
     noun = input("Type Noun: ")
     adjective = input("Type Adjective (Feeling): ")
     verb = input("Type Verb: ")
@@ -51,7 +51,7 @@ def second_template() :
     print(" If I see a " + color + " " + animal + " while hiking, I am going to bring it home as a pet! At night we will tell " + number + " " + sillyWord + " stories and roast " + noun2 + " around the campfire!! ")
 
 def third_template() :
-    properNoun = int(input("Type Proper Noun (Person’s Name): "))
+    properNoun = input("Type Proper Noun (Person’s Name): ")
     adjective = input("Type Adjective: ")
     color = input("Type a Color: ")
     animal = input("Type an Animal: ")
