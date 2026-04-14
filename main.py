@@ -10,7 +10,7 @@ def first_template() :
     color = getString("Type a Color: ")
     body = getString("Type Part of the Body: ")
     verb = getString("Type Verb: ")
-    number2 = getString("Type Number 2: ")
+    number2 = getNumber("Type Number 2: ")
     noun2 = getString("Type Noun 2: ")
     noun3 = getString("Type Noun 3: ")
     body2 = getString("Type Part of the Body 2: ")
@@ -18,14 +18,16 @@ def first_template() :
     adjective3 = getString("Type Adjective 3: ")
     sillyWord = getString("Type Silly Word: ")
 
-    print("It was about " + number + " " + date + " ago when I arrived at the hospital in a " + transport + ".")
-    print(" The hospital is a/an " + adjective + " place, there are a lot of " + adjective2 + " " + noun + " here.")
-    print(" There are nurses here who have " + color + " " + body + ".")
-    print(" If someone wants to come into my room I told them that they have to " + verb + " first.")
-    print(" I’ve decorated my room with " + number2 + " " + noun2 + ".")
-    print(" Today I talked to a doctor and they were wearing a " + noun3 + " on their " + body2 + ".")
-    print(" I heard that all doctors " + verb + " " + noun4 + " every day for breakfast.")
-    print(" The most " + adjective3 + " thing about being in the hospital is the " + sillyWord + " " + noun + "! ")
+    print(
+        f"It was about {number} {date} ago when I arrived at the hospital in a {transport}."
+        f" The hospital is a/an {adjective} place, there are a lot of {adjective2} {noun} here."
+        f" There are nurses here who have {color} {body}."
+        f" If someone wants to come into my room I told them that they have to {verb} first."
+        f" I’ve decorated my room with {number2} {noun2}."
+        f" Today I talked to a doctor and they were wearing a {noun3} on their {body2}."
+        f" I heard that all doctors {verb} {noun4} every day for breakfast."
+        f" The most {adjective3} thing about being in the hospital is the {sillyWord} {noun}! "
+    )
 
 def second_template() :
     properNoun = getString("Type Proper Noun (Person’s Name): ")
@@ -43,14 +45,17 @@ def second_template() :
     noun2 = getString("Type Noun 2: ")
     sillyWord = getString("Type Silly Word: ")
 
-    print("This weekend I am going camping with " + properNoun + ".")
-    print(" I packed my lantern, sleeping bag, and " + noun + ".")
-    print(" I am so " + adjective + " to " + verb + " in a tent.")
-    print(" I am " + adjective2 + " we might see a(n) " + animal + ", I hear they’re kind of dangerous.")
-    print(" While we’re camping, we are going to hike, fish, and " + verb2 + ".")
-    print(" I have heard that the " + color + " lake is great for " + verbing + ".")
-    print(" Then we will " + adverb + " hike through the forest for " + number + " " + date + ".")
-    print(" If I see a " + color + " " + animal + " while hiking, I am going to bring it home as a pet! At night we will tell " + number + " " + sillyWord + " stories and roast " + noun2 + " around the campfire!! ")
+    print(
+        f"This weekend I am going camping with {properNoun}."
+        f" I packed my lantern, sleeping bag, and {noun}."
+        f" I am so {adjective} to {verb} in a tent."
+        f" I am {adjective2} we might see a(n) {animal}, I hear they’re kind of dangerous."
+        f" While we’re camping, we are going to hike, fish, and {verb2}."
+        f" I have heard that the {color} lake is great for {verbing}."
+        f" Then we will {adverb} hike through the forest for {number} {date}."
+        f" If I see a {color} {animal} while hiking, I am going to bring it home as a pet!"
+        f" At night we will tell {number} {sillyWord} stories and roast {noun2} around the campfire!! "
+    )
 
 def third_template() :
     properNoun = getString("Type Proper Noun (Person’s Name): ")
@@ -74,33 +79,35 @@ def third_template() :
     adjective5 = getString("Type Adjective 5: ")
     noun5 = getString("Type Noun 5: ")
 
-    print("Dear " + properNoun + ", I am writing to you from a " + adjective + " castle in an enchanted forest.")
-    print(" I found myself here one day after going for a ride on a " + color + " " + animal + " in " + place + ".")
-    print(" There are " + adjective2 + " " + creature + " and " + adjective3 + " " + creature2 + " here! In the " + room + " there is a pool full of " + noun + ".")
-    print(" I fall asleep each night on a " + noun2 + " of " + noun3 + " and dream of " + adjective4 + " " + noun4 + ".")
-    print(" It feels as though I have lived here for " + number + " " + date + ".")
-    print(" I hope one day you can visit, although the only way to get here now is " + verbing + " on a " + adjective5 + " " + noun5 + "!!")
+    print(
+        f"Dear {properNoun} , I am writing to you from a {adjective} castle in an enchanted forest."
+        f" I found myself here one day after going for a ride on a {color} {animal} in {place}."
+        f" There are {adjective2} {creature} and {adjective3} {creature2} here! In the {room} there is a pool full of {noun}."
+        f" I fall asleep each night on a {noun2} of {noun3} and dream of {adjective4} {noun4}."
+        f" It feels as though I have lived here for {number} {date}."
+        f" I hope one day you can visit, although the only way to get here now is {verbing} on a {adjective5} {noun5}!!"
+    )
 
-def getString(req) :
-    res = input(req)
-    if type(res) != str or res.isdigit():
+def getString(prompt) :
+    res = input(prompt)
+    if res.strip() == "" or res.isdigit():
         print("Invalid Input!")
-        getString(req)        
+        return getString(prompt)        
     return res
 
-def getNumber(req) :
-    res = input(req)
+def getNumber(prompt) :
+    res = input(prompt)
     try:
-        res = int(res)
+        return int(res)
     except ValueError:
         print("Invalid Number!")
-        getNumber(req)        
-    return res
+        return getNumber(prompt)        
 
 try:
     template = int(input("Which Template you going to pick (1, 2, 3, 4(for random)): "))
 except ValueError:
     print("Invalid number!")
+    template = 0
 
 if template == 4 :
     template = random.randint(1, 3)
